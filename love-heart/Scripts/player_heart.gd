@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 @export var is_moving: bool = false
 @export var just_jumped: bool = false
 const ACCELERATION: float = 800.0
-const FRICTION: float = 180.0
+const FRICTION: float = 210.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

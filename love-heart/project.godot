@@ -18,6 +18,25 @@ config/icon="res://icon.svg"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "green",
+"res://Scripts/": "gray",
+"res://Sprites/": "blue",
+"res://Tilemaps/": "orange"
+}
+
+[global_group]
+
+Player=""
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Stage Geometry"
+2d_physics/layer_3="Elements (Stage)"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://citn31nwvnecf"]
+
+[ext_resource type="Script" uid="uid://cbl3dsg16j08d" path="res://Scripts/checkpoint.gd" id="1_2cwi7"]
+[ext_resource type="Texture2D" uid="uid://dfr280riwbmjo" path="res://Sprites/Stage_Elements/lollipopGreen.png" id="2_e75gc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1pff"]
+radius = 104.00481
+
+[node name="Checkpoint" type="Node2D" unique_id=577303078]
+script = ExtResource("1_2cwi7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=252470195]
+texture = ExtResource("2_e75gc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1892229652]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1507516073]
+shape = SubResource("CircleShape2D_i1pff")
+
+[node name="RespawnPoint" type="Marker2D" parent="." unique_id=905472374]
+position = Vector2(0, 9)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

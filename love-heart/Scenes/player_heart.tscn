@@ -140,7 +140,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vblyj"]
 
-[node name="Player" type="CharacterBody2D" unique_id=723213525]
+[node name="Player" type="CharacterBody2D" unique_id=723213525 groups=["Player"]]
+collision_mask = 6
 script = ExtResource("1_idijf")
 
 [node name="Animated Sprite 2D" type="AnimatedSprite2D" parent="." unique_id=975500936]
@@ -171,7 +172,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_vblyj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2035074045]
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(0.95, 0.95)
 
 [node name="StateMachine" type="Node" parent="." unique_id=2090100260 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_idijf")
@@ -192,7 +193,7 @@ script = ExtResource("5_aj1nb")
 player = NodePath("../..")
 animated_sprite = NodePath("../../Animated Sprite 2D")
 
-[node name="Jump Straight" type="Node" parent="StateMachine" unique_id=1597953311 node_paths=PackedStringArray("player", "animated_sprite")]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1597953311 node_paths=PackedStringArray("player", "animated_sprite")]
 script = ExtResource("6_60lbu")
 player = NodePath("../..")
 animated_sprite = NodePath("../../Animated Sprite 2D")

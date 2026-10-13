@@ -18,7 +18,7 @@ func _on_next_transitions() -> void:
 		transition.emit("idle")
 	
 	if player.velocity.y < 0 and not player.is_on_floor():
-			transition.emit("jump straight")
+			transition.emit("jump")
 		
 	if player.velocity.y > 0:
 		transition.emit("fall")
