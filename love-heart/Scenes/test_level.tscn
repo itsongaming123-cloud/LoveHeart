@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://dk888u8ortwbk" path="res://Scripts/deathzone.gd" id="4_btda1"]
 [ext_resource type="Script" uid="uid://beqyv7g3r0vcn" path="res://Scripts/checkpoint_manager.gd" id="5_xq3o0"]
 [ext_resource type="PackedScene" uid="uid://citn31nwvnecf" path="res://Scenes/checkpoint.tscn" id="6_2yvf5"]
+[ext_resource type="PackedScene" uid="uid://xn4lwfd657p" path="res://Scenes/goal.tscn" id="7_xq3o0"]
+[ext_resource type="Texture2D" uid="uid://bjvakh2elpiy6" path="res://Sprites/Stage_Elements/stoneHalf.png" id="8_2yvf5"]
+[ext_resource type="Script" uid="uid://cmimi1gv2k51l" path="res://Scripts/goal_screen.gd" id="8_3ihge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eglq2"]
 texture = ExtResource("2_dtjkg")
@@ -353,5 +356,60 @@ script = ExtResource("5_xq3o0")
 
 [node name="Checkpoint" parent="Checkpoint Manager" unique_id=577303078 instance=ExtResource("6_2yvf5")]
 position = Vector2(766, 499)
+
+[node name="Goal" parent="." unique_id=1695099817 instance=ExtResource("7_xq3o0")]
+position = Vector2(1708, 578)
+
+[node name="Goal Screen" type="Control" parent="." unique_id=682372174]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_3ihge")
+
+[node name="GOOOAAALL" type="CanvasLayer" parent="Goal Screen" unique_id=222460034]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="Goal Screen/GOOOAAALL" unique_id=1837999761]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47058824, 0.47058824, 0.47058824, 0.31764707)
+
+[node name="MarginContainer" type="MarginContainer" parent="Goal Screen/GOOOAAALL/ColorRect" unique_id=976423616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 437.0
+offset_top = 85.0
+offset_right = -436.99988
+offset_bottom = -101.99939
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37.5, 11.5)
+
+[node name="PanelContainer" type="PanelContainer" parent="Goal Screen/GOOOAAALL/ColorRect/MarginContainer" unique_id=1390320041]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Goal Screen/GOOOAAALL/ColorRect/MarginContainer/PanelContainer" unique_id=1454170019]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Goal Screen/GOOOAAALL/ColorRect/MarginContainer/PanelContainer/MarginContainer" unique_id=845476543]
+layout_mode = 2
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="Label" type="Label" parent="Goal Screen/GOOOAAALL/ColorRect/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=373206050]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Good Job!"
+
+[node name="Button" type="Button" parent="Goal Screen/GOOOAAALL/ColorRect/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1065298232]
+layout_mode = 2
+icon = ExtResource("8_2yvf5")
+icon_alignment = 1
 
 [connection signal="body_entered" from="Deathzone" to="Deathzone" method="_on_body_entered"]

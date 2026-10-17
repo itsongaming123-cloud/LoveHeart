@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://xn4lwfd657p"]
+
+[ext_resource type="Texture2D" uid="uid://dt6rvd1n3h5f3" path="res://Sprites/Stage_Elements/flagGreen2.png" id="1_paeek"]
+[ext_resource type="Script" uid="uid://bgr7rc2a6j3xd" path="res://Scripts/goal.gd" id="1_s0pnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0pnd"]
+radius = 24.0
+
+[node name="Goal" type="Node2D" unique_id=1695099817]
+script = ExtResource("1_s0pnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=230915871]
+texture_filter = 1
+position = Vector2(0, -16.63)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("1_paeek")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1366247162]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=406012543]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_s0pnd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
