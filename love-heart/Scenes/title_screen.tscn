@@ -1,0 +1,232 @@
+[gd_scene format=4 uid="uid://djt35f51etsm"]
+
+[ext_resource type="Script" uid="uid://bj87wkde5ew7f" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="PackedScene" uid="uid://dqy1pb0ir4gvk" path="res://Scenes/f_transition.tscn" id="2_p3fck"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_62dcu"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAADAAAADyAAAAUklGRuoAAABXRUJQVlA4TN0AAAAvP8ALEB8gEEgC219rDYFAkr/nHAsEkuT2R3r+A/BXgdvW1p7mF1QmzmGWYA/n0vqnYIq/diJ9UzCSY4eUfr7g1Ef0n2zSJt1Cp5yh3l7mHRzaH5LKo30FkNAe6OUL6yXkC4zAV/mCuRwAPNpnAA7tFYBifJVw/uBxPnMY/4Pd+RldW3RtCKy36NoIqIyeW7+vTWL9pLfRswOAt6vNn3Zv4qtLd7+mbUx3b7supbt3XdfhpgLyhYTXlqDKF8zlkC+8a9fFtvsBYNK96TqX6d51XPc25bpfY6574+LuCgA=")
+size_override = Vector2(64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klylv"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3fck"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gxqj"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55kwv"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12m1t"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vd4x"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n82rj"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0061g"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mikk"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqelc"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5sh6"]
+atlas = SubResource("PortableCompressedTexture2D_62dcu")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1e67"]
+animations = [{
+"frames": [{
+"duration": 25.0,
+"texture": SubResource("AtlasTexture_klylv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_p3fck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gxqj")
+}],
+"loop": true,
+"name": &"Blink",
+"speed": 50.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twnyg")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55kwv")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12m1t")
+}],
+"loop": true,
+"name": &"Jump Left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vd4x")
+}],
+"loop": true,
+"name": &"Jump Right",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n82rj")
+}],
+"loop": true,
+"name": &"Jump Straight",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0061g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mikk")
+}],
+"loop": true,
+"name": &"Walk Left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqelc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5sh6")
+}],
+"loop": true,
+"name": &"Walk Right",
+"speed": 2.0
+}]
+
+[node name="Title Screen Root" type="Control" unique_id=586044668]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klylv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1375636859]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=951256501]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.009529696, 0.65414673, 0.7668083, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=138999282]
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_right = 0.37100002
+anchor_bottom = 1.0
+offset_left = 0.18399811
+offset_right = -0.3920288
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1023730991]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Start" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1866752232]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start"
+
+[node name="Stage Select" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1987661655]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Stage Select"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=804744854]
+texture_filter = 1
+position = Vector2(807, 317)
+rotation = -0.26179937
+scale = Vector2(23.03321, 23.03321)
+sprite_frames = SubResource("SpriteFrames_o1e67")
+animation = &"Blink"
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Sprites/player_heart/V1_0_Player_heart_PH.aseprite",
+"source_uid": 6478039267300453190
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0fea04630c6e22ca6a02b374f72ef486"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=805282775]
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 494.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 60
+text = "The Game Thing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fade_Rect" parent="CanvasLayer" unique_id=1685185094 instance=ExtResource("2_p3fck")]
+visible = false
+top_level = true
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Fade_Timer" type="Timer" parent="CanvasLayer/Fade_Rect" unique_id=456795408]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Stage Select" to="." method="_on_stage_select_pressed"]
+[connection signal="timeout" from="CanvasLayer/Fade_Rect/Fade_Timer" to="." method="_on_fade_timer_timeout"]
